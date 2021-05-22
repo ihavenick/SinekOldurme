@@ -1,0 +1,48 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Anakarakter : MonoBehaviour
+{
+    public int karaktercan;
+    public int karakterzehir;
+    public Slider Canbar;
+    public Slider zehir;
+
+    void Start()
+    {
+        karaktercan = 100;
+        karakterzehir = 0;
+       
+       
+    }
+    public void TakeDamage(int damageAmount)
+    {
+        if (karaktercan > damageAmount && karakterzehir < 100)
+        {
+            karakterzehir += 20;
+            karaktercan -= damageAmount;
+        }
+        if (karaktercan > damageAmount && karakterzehir == 100)
+        {
+            karakterzehir = 0;
+            karaktercan -= damageAmount;
+        }
+
+        // ölüm durumu eklenecek
+      
+    }
+
+    // Update is called once per frame
+
+       void Update()
+    {
+      
+    }
+
+
+
+
+
+}
