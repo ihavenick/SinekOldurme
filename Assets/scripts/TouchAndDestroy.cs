@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class TouchAndDestroy : MonoBehaviour
 {
-    private GameObject harmonyVideo;
-    
+    public GameObject hand;
+    public Texture2D cursor;
+    Animator myAnimator;
+
     // Use this for initialization
     void Start()
     {
-        harmonyVideo = GameObject.Find("HarmonyVideo");
+        myAnimator = hand.GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -20,6 +22,9 @@ public class TouchAndDestroy : MonoBehaviour
         {
             if (touch.phase == TouchPhase.Began)
             {
+
+                //animatör buraya eklenecek
+              //  myAnimator.SetTrigger("onhit");
                 Ray ray;
                 RaycastHit hit;
                 ray = Camera.main.ScreenPointToRay(touch.position);
@@ -29,14 +34,36 @@ public class TouchAndDestroy : MonoBehaviour
                     {
                         Destroy(gameObject, 0.2f);
                         scorescript.scoreValue += 1;
-
+                        
                     }
                     else
                     {
-                        Debug.Log("This object is not the Harmony Video");
+                        var asd = Instantiate(hand, hit.transform);
+                        asd.GetComponent<Animator>().SetTrigger("onhit");
                     }
+
+
                 }
             }
+        }
+#if UNITY_EDITOR
+        if(Input.GetMouseButton(0))
+        {
+            Ray ray;
+            RaycastHit hit;
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                if (hit.transform.gameObject.name == ("AnaKarakter"))
+                
+                {
+                    var asd = Instantiate(hand, transform);
+                    asd.GetComponent<Animator>().SetTrigger("onhit");
+                }
+
+
+            }
+#endif
         }
     }
 }

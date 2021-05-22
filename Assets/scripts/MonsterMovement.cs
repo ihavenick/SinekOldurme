@@ -10,12 +10,14 @@ public class MonsterMovement : MonoBehaviour
     Vector3 directionToTarget;
     public GameObject explosion;
 
+
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.Find("AnaKarakter");
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = Random.Range(1f, 3f);
+
     }
 
     // Update is called once per frame
@@ -23,8 +25,8 @@ public class MonsterMovement : MonoBehaviour
     {
         MoveMonster();
     }
-    
-    void MoveMonster ()
+
+    void MoveMonster()
     {
         if (target != null)
         {
@@ -35,6 +37,15 @@ public class MonsterMovement : MonoBehaviour
         else
         {
             rb.velocity = Vector3.zero;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("AnaKarakter"))
+        {
+            GameObject.FindGameObjectWithTag("AnaKarakter").GetComponent<Anakarakter>().TakeDamage(5);
+            var Sivri = GameObject.FindGameObjectWithTag("Sivri");
+            Destroy(Sivri);
         }
     }
 }
