@@ -20,6 +20,19 @@ public class TouchAndDestroy : MonoBehaviour
 
     public void TerlikOlustur(LeanFinger LF)
     {
+        
+        var ray = LF.GetRay();
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            Debug.Log(hit.transform.gameObject.name);
+            if (hit.transform.tag == "Sivri")
+            {
+                Destroy(gameObject, 0.2f);
+                scorescript.scoreValue += 1;
+                        
+            }
+        }
         var asd =Instantiate(hand, LF.GetWorldPosition(200f),quaternion.identity);
         asd.GetComponent<Animator>().SetTrigger("onhit");
         Destroy(asd, 0.5f);

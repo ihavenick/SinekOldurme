@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class MonsterMovement : MonoBehaviour
 {
@@ -39,13 +41,21 @@ public class MonsterMovement : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("AnaKarakter"))
+        if (other.collider.CompareTag("AnaKarakter"))
         {
             GameObject.FindGameObjectWithTag("AnaKarakter").GetComponent<Anakarakter>().TakeDamage(5);
-            var Sivri = GameObject.FindGameObjectWithTag("Sivri");
-            Destroy(Sivri);
+            
+            
+            //var Sivri = GameObject.FindGameObjectWithTag("Sivri");
+            Destroy(other.otherCollider.gameObject);
+        }
+
+        if (other.collider.CompareTag("Hand"))
+        {
+            Destroy(other.otherCollider.gameObject);
         }
     }
 }

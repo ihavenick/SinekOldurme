@@ -15,6 +15,8 @@ public class Anakarakter : MonoBehaviour
         karaktercan = 100;
         karakterzehir = 0;
        
+        Canbar.value = karaktercan;
+        zehir.value = karakterzehir;
        
     }
     public void TakeDamage(int damageAmount)
@@ -23,20 +25,23 @@ public class Anakarakter : MonoBehaviour
         {
             karakterzehir += 20;
             karaktercan -= damageAmount;
+            
         }
         if (karaktercan > damageAmount && karakterzehir == 100)
         {
             karakterzehir = 0;
             karaktercan -= damageAmount;
         }
+        Canbar.value = karaktercan;
+        zehir.value = karakterzehir;
 
-        // ölüm durumu eklenecek
+        // ï¿½lï¿½m durumu eklenecek
       
     }
 
     // Update is called once per frame
-
-       void Update()
+    
+    void Update()
     {
       
     }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AnaKarakter
   - Sivri
+  - Hand
   layers:
   - Default
   - TransparentFX
