@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class TouchAndDestroy : MonoBehaviour
 {
     private GameObject harmonyVideo;
+    
     // Use this for initialization
     void Start()
     {
@@ -25,6 +28,8 @@ public class TouchAndDestroy : MonoBehaviour
                     if (hit.transform.gameObject.name == ("HarmonyVideo"))
                     {
                         Destroy(gameObject, 0.2f);
+                        scorescript.scoreValue += 1;
+
                     }
                     else
                     {
