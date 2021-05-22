@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Lean.Touch;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +17,17 @@ public class TouchAndDestroy : MonoBehaviour
     {
         myAnimator = hand.GetComponent<Animator>();
     }
+
+    public void TerlikOlustur(LeanFinger LF)
+    {
+        var asd =Instantiate(hand, LF.GetWorldPosition(200f),quaternion.identity);
+        asd.GetComponent<Animator>().SetTrigger("onhit");
+        Destroy(asd, 0.5f);
+    }
+    
+    
+    
+    
     // Update is called once per frame
     void Update()
     {
@@ -23,7 +36,7 @@ public class TouchAndDestroy : MonoBehaviour
             if (touch.phase == TouchPhase.Began)
             {
 
-                //animatör buraya eklenecek
+                //animatï¿½r buraya eklenecek
               //  myAnimator.SetTrigger("onhit");
                 Ray ray;
                 RaycastHit hit;
