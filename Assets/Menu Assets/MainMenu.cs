@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
+        Debug.Log("Baþlattým");
     }
     public void QuitGame()
     {
