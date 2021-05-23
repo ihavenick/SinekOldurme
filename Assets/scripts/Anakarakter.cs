@@ -9,13 +9,13 @@ public class Anakarakter : MonoBehaviour
     public int karakterzehir;
     public Slider Canbar;
     public Slider zehir;
-   
+    private Animator anim;
 
     void Start()
     {
         karaktercan = 100;
         karakterzehir = 0;
-       
+        anim = GetComponent<Animator>();
         Canbar.value = karaktercan;
         zehir.value = karakterzehir;
        
@@ -44,7 +44,10 @@ public class Anakarakter : MonoBehaviour
 
     void Update()
     {
-
+        if (karaktercan <= 30 && karaktercan > 0)
+        {
+            anim.SetBool("homurdanma", true);
+        }
     }
 
 
