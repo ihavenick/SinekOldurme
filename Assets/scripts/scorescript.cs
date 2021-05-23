@@ -5,17 +5,19 @@ using UnityEngine.UI;
 
 public class scorescript : MonoBehaviour
 {
-    public static int scoreValue = 0;
-    Text score;
+    Text text;
+    public static int soulAmount = 5;
     // Start is called before the first frame update
     void Start()
     {
-        score = GetComponent<Text>();
+        text = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        score.text = scoreValue.ToString();
+        text.text = soulAmount.ToString();
+
     }
+
 }

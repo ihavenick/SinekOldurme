@@ -29,7 +29,7 @@ public class TouchAndDestroy : MonoBehaviour
             if (hit.transform.tag == "Sivri")
             {
                 Destroy(gameObject, 0.2f);
-                scorescript.scoreValue += 1;
+                scorescript.soulAmount += 1;
                         
             }
         }
@@ -56,10 +56,10 @@ public class TouchAndDestroy : MonoBehaviour
                 ray = Camera.main.ScreenPointToRay(touch.position);
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity))
                 {
-                    if (hit.transform.gameObject.name == ("HarmonyVideo"))
+                    if (hit.transform.gameObject.name == ("Sivri"))
                     {
                         Destroy(gameObject, 0.2f);
-                        scorescript.scoreValue += 1;
+                        scorescript.soulAmount += 1;
                         
                     }
                     else
