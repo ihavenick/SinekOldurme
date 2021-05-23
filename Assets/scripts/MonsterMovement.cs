@@ -11,6 +11,7 @@ public class MonsterMovement : MonoBehaviour
     float moveSpeed;
     Vector3 directionToTarget;
     public GameObject explosion;
+    public Animator anim;
 
 
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class MonsterMovement : MonoBehaviour
         target = GameObject.Find("AnaKarakter");
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = Random.Range(1f, 3f);
-
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -55,7 +56,9 @@ public class MonsterMovement : MonoBehaviour
 
         if (other.collider.CompareTag("Hand"))
         {
-            Destroy(other.otherCollider.gameObject);
+            anim.SetTrigger("dead");
+            Destroy(other.otherCollider.gameObject, 0.8f);
+            GetComponent<BoxCollider2D>().isTrigger = true;
         }
     }
 }
