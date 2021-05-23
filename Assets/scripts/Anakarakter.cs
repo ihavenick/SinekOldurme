@@ -36,7 +36,11 @@ public class Anakarakter : MonoBehaviour
         Canbar.value = karaktercan;
         zehir.value = karakterzehir;
 
-        // �l�m durumu eklenecek
+        if (karaktercan<=damageAmount)
+        {
+            karaktercan -= damageAmount;
+            anim.SetBool("dead", true);
+        }
       
     }
 

@@ -512,7 +512,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ec882f7498ef543a76ae7c4f46b227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprey: {fileID: 0}
+  startTimeBtwShots: 5
+  SPREY: {fileID: 5107631020826989188, guid: 94e463ea2a040124d960e8fbeb5e471b, type: 3}
 --- !u!114 &224990107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1547,7 +1548,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 3217511652523346571, guid: 96fc0c1ff1f352445873943e3e5e7968, type: 3}
+  Terlik: {fileID: 3647080322306457612, guid: 93668e0644341e64887d39e401997a38, type: 3}
   cursor: {fileID: 0}
+  startTimeBtwShots: 1
 --- !u!114 &926649175
 MonoBehaviour:
   m_ObjectHideFlags: 0
