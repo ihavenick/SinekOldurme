@@ -6,7 +6,7 @@ public class Sprey : MonoBehaviour
 {
 
     public GameObject sprey;
-    private bool cooldown = false;
+    
     // Start is called before the first frame update
     void Start()
     {
