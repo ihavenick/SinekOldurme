@@ -66,46 +66,46 @@ public class TouchAndDestroy : MonoBehaviour
         void Update()
         {
             timeBtwShots -= Time.deltaTime;
-            foreach (Touch touch in Input.touches)
-            {
-                if (touch.phase == TouchPhase.Began)
-                {
-                    //animat�r buraya eklenecek
-                    //  myAnimator.SetTrigger("onhit");
-                    Ray ray;
-                    RaycastHit hit;
-                    ray = Camera.main.ScreenPointToRay(touch.position);
-                    if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-                    {
-                        if (hit.transform.gameObject.name == ("Sivri"))
-                        {
-                            Destroy(gameObject, 0.2f);
-                            scorescript.soulAmount += 1;
-                        }
-                        else
-                        {
-                            var asd = Instantiate(hand, hit.transform);
-                            asd.GetComponent<Animator>().SetTrigger("onhit");
-                        }
-                    }
-                }
-            }
-#if UNITY_EDITOR
-            if (Input.GetMouseButton(0))
-            {
-                Ray ray;
-                RaycastHit hit;
-                ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-                {
-                    if (hit.transform.gameObject.name == ("AnaKarakter"))
-
-                    {
-                        var asd = Instantiate(hand, transform);
-                        asd.GetComponent<Animator>().SetTrigger("onhit");
-                    }
-                }
-#endif
-            }
+//             foreach (Touch touch in Input.touches)
+//             {
+//                 if (touch.phase == TouchPhase.Began)
+//                 {
+//                     //animat�r buraya eklenecek
+//                     //  myAnimator.SetTrigger("onhit");
+//                     Ray ray;
+//                     RaycastHit hit;
+//                     ray = Camera.main.ScreenPointToRay(touch.position);
+//                     if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+//                     {
+//                         if (hit.transform.gameObject.name == ("Sivri"))
+//                         {
+//                             Destroy(gameObject, 0.2f);
+//                             scorescript.soulAmount += 1;
+//                         }
+//                         else
+//                         {
+//                             var asd = Instantiate(hand, hit.transform);
+//                             asd.GetComponent<Animator>().SetTrigger("onhit");
+//                         }
+//                     }
+//                 }
+//             }
+// #if UNITY_EDITOR
+//             if (Input.GetMouseButton(0))
+//             {
+//                 Ray ray;
+//                 RaycastHit hit;
+//                 ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+//                 if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+//                 {
+//                     if (hit.transform.gameObject.name == ("AnaKarakter"))
+//
+//                     {
+//                         var asd = Instantiate(hand, transform);
+//                         asd.GetComponent<Animator>().SetTrigger("onhit");
+//                     }
+//                 }
+// #endif
+            
         }
     }

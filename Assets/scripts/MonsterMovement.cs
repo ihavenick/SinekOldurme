@@ -12,6 +12,7 @@ public class MonsterMovement : MonoBehaviour
     Vector3 directionToTarget;
     public GameObject explosion;
     public Animator anim;
+    public GameObject SineginKendisi;
 
 
     // Start is called before the first frame update
@@ -27,20 +28,36 @@ public class MonsterMovement : MonoBehaviour
     void Update()
     {
         MoveMonster();
+        
+        if (directionToTarget.x < 0)
+        {
+            SineginKendisi.GetComponent<SpriteRenderer>().flipX = false;
+
+        }
+        else
+        {
+            SineginKendisi.GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 
     void MoveMonster()
     {
         if (target != null)
         {
-            directionToTarget = (target.transform.position - transform.position).normalized;
+            var test = new Vector3(target.transform.position.x, target.transform.position.y - 2);
+            directionToTarget = (test - transform.position).normalized;
             rb.velocity = new Vector2(directionToTarget.x * moveSpeed, directionToTarget.y * moveSpeed);
-        }
-
+        } 
         else
         {
             rb.velocity = Vector3.zero;
         }
+
+        Debug.Log(directionToTarget.x);
+
+       
+
+       
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -56,9 +73,9 @@ public class MonsterMovement : MonoBehaviour
 
         if (other.collider.CompareTag("Hand"))
         {
+            GetComponent<BoxCollider2D>().isTrigger = true;
             anim.SetTrigger("dead");
             Destroy(other.otherCollider.gameObject, 0.8f);
-            GetComponent<BoxCollider2D>().isTrigger = true;
         }
     }
 }

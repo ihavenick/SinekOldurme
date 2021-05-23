@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class Anakarakter : MonoBehaviour
     public Slider Canbar;
     public Slider zehir;
     private Animator anim;
+    private bool Oldum;
     public GameObject ruh;
     void Start()
     {
@@ -22,6 +24,10 @@ public class Anakarakter : MonoBehaviour
     }
     public void TakeDamage(int damageAmount)
     {
+        if (Oldum)
+        {
+            return;
+        }
         if (karaktercan > damageAmount && karakterzehir < 100)
         {
             karakterzehir += 20;
@@ -40,7 +46,9 @@ public class Anakarakter : MonoBehaviour
         {
             karaktercan -= damageAmount;
             anim.SetBool("dead", true);
-            var asd =Instantiate(ruh, transform);
+            var yer = new Vector2(transform.position.x, -10);
+            var asd =Instantiate(ruh, yer, quaternion.identity);
+            Oldum = true;
             Destroy(asd, 2f);
         }
       
@@ -50,7 +58,7 @@ public class Anakarakter : MonoBehaviour
 
     void Update()
     {
-        if (karaktercan <= 30 && karaktercan > 0)
+        if (karaktercan <= 30 && karaktercan > 0 && Oldum!=true)
         {
             anim.SetBool("homurdanma", true);
         }
