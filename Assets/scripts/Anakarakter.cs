@@ -10,7 +10,7 @@ public class Anakarakter : MonoBehaviour
     public Slider Canbar;
     public Slider zehir;
     private Animator anim;
-
+    public GameObject ruh;
     void Start()
     {
         karaktercan = 100;
@@ -40,6 +40,8 @@ public class Anakarakter : MonoBehaviour
         {
             karaktercan -= damageAmount;
             anim.SetBool("dead", true);
+            var asd =Instantiate(ruh, transform);
+            Destroy(asd, 2f);
         }
       
     }

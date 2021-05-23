@@ -42,8 +42,7 @@ public class Sprey : MonoBehaviour
         }
 
 
-        /* var asd = Instantiate(sprey, transform);
-         asd.GetComponent<Animator>().SetTrigger("sprey");*/
+        
     }
 
     

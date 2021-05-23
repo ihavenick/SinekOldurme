@@ -1364,6 +1364,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2206923515060113000, guid: 72143f10caa633f4f81f80520963a424, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206923515060113000, guid: 72143f10caa633f4f81f80520963a424, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206923515356924986, guid: 72143f10caa633f4f81f80520963a424, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206923515356924986, guid: 72143f10caa633f4f81f80520963a424, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206923515508964088, guid: 72143f10caa633f4f81f80520963a424, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206923515720123535, guid: 72143f10caa633f4f81f80520963a424, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206923515809689948, guid: 72143f10caa633f4f81f80520963a424, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206923515809689948, guid: 72143f10caa633f4f81f80520963a424, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.21
+      objectReference: {fileID: 0}
     - target: {fileID: 2206923515969159696, guid: 72143f10caa633f4f81f80520963a424, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1411,6 +1443,10 @@ PrefabInstance:
     - target: {fileID: 2206923515969159727, guid: 72143f10caa633f4f81f80520963a424, type: 3}
       propertyPath: m_Name
       value: Spawnpoints
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206923516370023812, guid: 72143f10caa633f4f81f80520963a424, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.94
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72143f10caa633f4f81f80520963a424, type: 3}
@@ -2180,6 +2216,7 @@ MonoBehaviour:
   karakterzehir: 0
   Canbar: {fileID: 653301863}
   zehir: {fileID: 434475326}
+  ruh: {fileID: 4872558613705915202, guid: 7bbc68c2e58ff9942a23c58a83386b89, type: 3}
 --- !u!61 &1128813274
 BoxCollider2D:
   m_ObjectHideFlags: 0
