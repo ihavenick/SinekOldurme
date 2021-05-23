@@ -16,7 +16,7 @@ public class scorescript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //text.text = soulAmount.ToString();
+        text.text = soulAmount.ToString();
 
     }
 

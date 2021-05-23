@@ -34,7 +34,7 @@ public class TouchAndDestroy : MonoBehaviour
              if (hit.transform.tag == "Sivri")
              {
                  Destroy(gameObject, 0.2f);
-                 scorescript.soulAmount += 1;
+                 
                          
              }
          }
@@ -46,6 +46,7 @@ public class TouchAndDestroy : MonoBehaviour
                 var asd = Instantiate(Terlik, LF.GetWorldPosition(200f), quaternion.identity);
                 asd.GetComponent<Animator>().SetTrigger("onhit");
                 Destroy(asd, 0.5f);
+                scorescript.soulAmount += 1;
                 timeBtwShots = startTimeBtwShots;
             }
             else
@@ -53,6 +54,7 @@ public class TouchAndDestroy : MonoBehaviour
                 var asd = Instantiate(hand, LF.GetWorldPosition(200f), quaternion.identity);
                 asd.GetComponent<Animator>().SetTrigger("onhit");
                 Destroy(asd, 0.5f);
+                scorescript.soulAmount += 1;
                 timeBtwShots = startTimeBtwShots;
             }
             
