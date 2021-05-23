@@ -9,6 +9,7 @@ public class Anakarakter : MonoBehaviour
     public int karakterzehir;
     public Slider Canbar;
     public Slider zehir;
+   
 
     void Start()
     {
@@ -40,10 +41,10 @@ public class Anakarakter : MonoBehaviour
     }
 
     // Update is called once per frame
-    
+
     void Update()
     {
-      
+
     }
 
 
