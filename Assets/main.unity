@@ -2492,6 +2492,12 @@ MonoBehaviour:
   karakterzehir: 0
   Canbar: {fileID: 267476422}
   zehir: {fileID: 383946287}
+  audioSource: {fileID: 0}
+  ruhCikmaSesi: {fileID: 8300000, guid: 68f7a3916e1e2524aba8bf78fd3949d8, type: 3}
+  KasinmaSesiClip: {fileID: 8300000, guid: cb8f5637e787e374ba3a7d751ada7fc3, type: 3}
+  Horlama: {fileID: 8300000, guid: e6a5d3d748cec1d4cbea18d583be9007, type: 3}
+  HomurdamaCli: {fileID: 8300000, guid: 7a98323576977b348a5a2869c1a80363, type: 3}
+  GameOver: {fileID: 1988992631}
   ruh: {fileID: 4872558613705915202, guid: 7bbc68c2e58ff9942a23c58a83386b89, type: 3}
 --- !u!61 &1128813274
 BoxCollider2D:
@@ -2529,8 +2535,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 013bb253f04707545b2d8ad5fcd94a4e, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3674,7 +3680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1988992632
 RectTransform:
   m_ObjectHideFlags: 0
